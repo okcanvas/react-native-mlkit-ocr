@@ -34,7 +34,7 @@ class MlkitOcrModule(reactContext: ReactApplicationContext) : ReactContextBaseJa
     try {
       image = InputImage.fromFilePath(reactApplicationContext,  Uri.parse(path))
       //val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
-      val recognizer = TextRecognition.getClient(new KoreanTextRecognizerOptions.Builder().build());
+      val recognizer = TextRecognition.getClient(KoreanTextRecognizerOptions.Builder().build());
       recognizer.process(image).addOnSuccessListener { visionText ->
         promise.resolve(getDataAsArray(visionText))
       }.addOnFailureListener { e ->

@@ -12,11 +12,13 @@ buildscript {
     classpath 'com.android.tools.build:gradle:3.2.1'
     // noinspection DifferentKotlinGradleVersion
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    classpath 'com.google.android.gms:strict-version-matcher-plugin:1.2.1'
   }
 }
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.google.android.gms.strict-version-matcher-plugin'
 
 def getExtOrDefault(name) {
   return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties['MlkitOcr_' + name]
@@ -128,6 +130,20 @@ dependencies {
   // noinspection GradleDynamicVersion
   api 'com.facebook.react:react-native:+'
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-  implementation 'com.google.android.gms:play-services-mlkit-text-recognition:18.0.0'
+
+  //implementation 'com.google.android.gms:play-services-mlkit-text-recognition:18.0.2'
+  //implementation 'com.google.android.gms:play-services-mlkit-language-id:17.0.0'
+  //implementation 'com.google.android.gms:play-services-mlkit-smart-reply:16.0.0-beta1'
+
+  //  To recognize Latin script
+  implementation 'com.google.mlkit:text-recognition:16.0.0-beta6'
+  //  To recognize Chinese script
+  implementation 'com.google.mlkit:text-recognition-chinese:16.0.0-beta6'
+  //  To recognize Devanagari script
+  implementation 'com.google.mlkit:text-recognition-devanagari:16.0.0-beta6'
+  //  To recognize Japanese script
+  implementation 'com.google.mlkit:text-recognition-japanese:16.0.0-beta6'
+  //  To recognize Korean script
+  implementation 'com.google.mlkit:text-recognition-korean:16.0.0-beta6'
 
 }
