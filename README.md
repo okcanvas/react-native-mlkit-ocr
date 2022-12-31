@@ -3,7 +3,7 @@
     Google on-device MLKit text recognition for React Native
 </p>
 
-**expo surport**
+**expo + 한글 지원**
 ```language
 yarn add okcanvas/react-native-mlkit-ocr
 eas build --platform android --profile development
