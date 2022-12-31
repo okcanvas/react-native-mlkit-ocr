@@ -135,15 +135,14 @@ dependencies {
   //implementation 'com.google.android.gms:play-services-mlkit-language-id:17.0.0'
   //implementation 'com.google.android.gms:play-services-mlkit-smart-reply:16.0.0-beta1'
 
-  //  To recognize Latin script
-  implementation 'com.google.mlkit:text-recognition:16.0.0-beta6'
-  //  To recognize Chinese script
-  implementation 'com.google.mlkit:text-recognition-chinese:16.0.0-beta6'
-  //  To recognize Devanagari script
-  implementation 'com.google.mlkit:text-recognition-devanagari:16.0.0-beta6'
-  //  To recognize Japanese script
-  implementation 'com.google.mlkit:text-recognition-japanese:16.0.0-beta6'
-  //  To recognize Korean script
-  implementation 'com.google.mlkit:text-recognition-korean:16.0.0-beta6'
+  /// Text features
+    implementation 'com.google.mlkit:text-recognition:16.0.0-beta6'
+    // Or comment the dependency above and uncomment the dependency below to
+    // use unbundled model that depends on Google Play Services
+    // implementation 'com.google.android.gms:play-services-mlkit-text-recognition:18.0.2'
+    implementation 'com.google.mlkit:text-recognition-chinese:16.0.0-beta6'
+    implementation 'com.google.mlkit:text-recognition-devanagari:16.0.0-beta6'
+    implementation 'com.google.mlkit:text-recognition-japanese:16.0.0-beta6'
+    implementation 'com.google.mlkit:text-recognition-korean:16.0.0-beta6'
 
 }
