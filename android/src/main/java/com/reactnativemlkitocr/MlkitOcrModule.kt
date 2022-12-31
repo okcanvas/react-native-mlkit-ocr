@@ -8,6 +8,9 @@ import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.Text
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
+import com.google.mlkit.vision.text.chinese.ChineseTextRecognizerOptions;
+import com.google.mlkit.vision.text.japanese.JapaneseTextRecognizerOptions;
+import com.google.mlkit.vision.text.korean.KoreanTextRecognizerOptions;
 import java.lang.Exception
 
 
@@ -30,7 +33,8 @@ class MlkitOcrModule(reactContext: ReactApplicationContext) : ReactContextBaseJa
     val image: InputImage;
     try {
       image = InputImage.fromFilePath(reactApplicationContext,  Uri.parse(path))
-      val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
+      //val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
+      val recognizer = TextRecognition.getClient(new KoreanTextRecognizerOptions.Builder().build());
       recognizer.process(image).addOnSuccessListener { visionText ->
         promise.resolve(getDataAsArray(visionText))
       }.addOnFailureListener { e ->

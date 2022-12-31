@@ -93,8 +93,30 @@ RCT_REMAP_METHOD(detectFromUri, detectFromUri:(NSString *)imagePath resolver:(RC
             return;
         }
         
-        MLKTextRecognizer *textRecognizer = [MLKTextRecognizer textRecognizer];
+        //MLKTextRecognizer *textRecognizer = [MLKTextRecognizer textRecognizer];
+        //MLKVisionImage *handler = [[MLKVisionImage alloc] initWithImage:image];
+
+        MLKCommonTextRecognizerOptions *options;
+        options = [[MLKKoreanTextRecognizerOptions alloc] init];
+        MLKTextRecognizer *textRecognizer = [MLKTextRecognizer textRecognizerWithOptions:options];
         MLKVisionImage *handler = [[MLKVisionImage alloc] initWithImage:image];
+
+        /*
+        MLKCommonTextRecognizerOptions *options;
+        if (detectorType == DetectorOnDeviceText) {
+            options = [[MLKTextRecognizerOptions alloc] init];
+        } else if (detectorType == DetectorOnDeviceTextChinese) {
+            options = [[MLKChineseTextRecognizerOptions alloc] init];
+        } else if (detectorType == DetectorOnDeviceTextDevanagari) {
+            options = [[MLKDevanagariTextRecognizerOptions alloc] init];
+        } else if (detectorType == DetectorOnDeviceTextJapanese) {
+            options = [[MLKJapaneseTextRecognizerOptions alloc] init];
+        } else if (detectorType == DetectorOnDeviceTextKorean) {
+            options = [[MLKKoreanTextRecognizerOptions alloc] init];
+        }
+        MLKTextRecognizer *textRecognizer = [MLKTextRecognizer textRecognizerWithOptions:options];
+        */
+
         
         [textRecognizer processImage:handler completion:^(MLKText  *_Nullable result, NSError *_Nullable error) {
             @try {
@@ -141,8 +163,14 @@ RCT_REMAP_METHOD(detectFromFile, detectFromFile:(NSString *)imagePath resolver:(
             return;
         }
         
-        MLKTextRecognizer *textRecognizer = [MLKTextRecognizer textRecognizer];
+        //MLKTextRecognizer *textRecognizer = [MLKTextRecognizer textRecognizer];
+        //MLKVisionImage *handler = [[MLKVisionImage alloc] initWithImage:image];
+
+        MLKCommonTextRecognizerOptions *options;
+        options = [[MLKKoreanTextRecognizerOptions alloc] init];
+        MLKTextRecognizer *textRecognizer = [MLKTextRecognizer textRecognizerWithOptions:options];
         MLKVisionImage *handler = [[MLKVisionImage alloc] initWithImage:image];
+
         
         [textRecognizer processImage:handler completion:^(MLKText *_Nullable result, NSError *_Nullable error) {
             @try {
