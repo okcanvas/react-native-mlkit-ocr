@@ -93,6 +93,7 @@ class MlkitOcrModule(reactContext: ReactApplicationContext) : ReactContextBaseJa
         for (element in line.elements) {
           val e: WritableMap = Arguments.createMap()
           e.putString("text", element.text)
+          e.putString("language", element.recognizedLanguage)
           e.putMap("bounding", getCoordinates(element.boundingBox))
           e.putArray("cornerPoints", getCornerPoints(element.cornerPoints))
           lineElements.pushMap(e)
