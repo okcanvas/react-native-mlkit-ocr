@@ -93,13 +93,13 @@ RCT_REMAP_METHOD(detectFromUri, detectFromUri:(NSString *)imagePath resolver:(RC
             return;
         }
         
-        //MLKTextRecognizer *textRecognizer = [MLKTextRecognizer textRecognizer];
-        //MLKVisionImage *handler = [[MLKVisionImage alloc] initWithImage:image];
-
-        MLKCommonTextRecognizerOptions *options;
-        options = [[MLKKoreanTextRecognizerOptions alloc] init];
-        MLKTextRecognizer *textRecognizer = [MLKTextRecognizer textRecognizerWithOptions:options];
+        MLKTextRecognizer *textRecognizer = [MLKTextRecognizer textRecognizer];
         MLKVisionImage *handler = [[MLKVisionImage alloc] initWithImage:image];
+
+        //MLKCommonTextRecognizerOptions *options;
+        //options = [[MLKKoreanTextRecognizerOptions alloc] init];
+        //MLKTextRecognizer *textRecognizer = [MLKTextRecognizer textRecognizerWithOptions:options];
+        //MLKVisionImage *handler = [[MLKVisionImage alloc] initWithImage:image];
 
         /*
         MLKCommonTextRecognizerOptions *options;
@@ -163,13 +163,13 @@ RCT_REMAP_METHOD(detectFromFile, detectFromFile:(NSString *)imagePath resolver:(
             return;
         }
         
-        //MLKTextRecognizer *textRecognizer = [MLKTextRecognizer textRecognizer];
-        //MLKVisionImage *handler = [[MLKVisionImage alloc] initWithImage:image];
-
-        MLKCommonTextRecognizerOptions *options;
-        options = [[MLKKoreanTextRecognizerOptions alloc] init];
-        MLKTextRecognizer *textRecognizer = [MLKTextRecognizer textRecognizerWithOptions:options];
+        MLKTextRecognizer *textRecognizer = [MLKTextRecognizer textRecognizer];
         MLKVisionImage *handler = [[MLKVisionImage alloc] initWithImage:image];
+
+        //MLKCommonTextRecognizerOptions *options;
+        //options = [[MLKKoreanTextRecognizerOptions alloc] init];
+        //MLKTextRecognizer *textRecognizer = [MLKTextRecognizer textRecognizerWithOptions:options];
+        //MLKVisionImage *handler = [[MLKVisionImage alloc] initWithImage:image];
 
         
         [textRecognizer processImage:handler completion:^(MLKText *_Nullable result, NSError *_Nullable error) {
